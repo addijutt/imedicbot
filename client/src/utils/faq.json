@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Is iMedicBot secure and private?",
+    "answer": "Yes, iMedicBot takes data security and privacy very seriously. We use industry-leading encryption and security practices to protect your sensitive health information. Our platform is fully compliant with relevant data protection laws and regulations."
+  },
+  {
+    "question": "How accurate is iMedicBot's symptom checker?",
+    "answer": "iMedicBot's symptom checker uses advanced AI algorithms to provide a preliminary assessment of your symptoms based on the information you provide. While it is designed to be accurate and up-to-date, it should not replace a consultation with a healthcare professional. Always consult with a medical expert for a definitive diagnosis and treatment plan."
+  },
+  {
+    "question": "Can iMedicBot diagnose medical conditions?",
+    "answer": "No, iMedicBot cannot provide medical diagnoses. It can, however, offer a preliminary assessment of your symptoms and potential conditions. For an official diagnosis, please consult with a healthcare professional."
+  },
+  {
+    "question": "Is iMedicBot a replacement for my doctor?",
+    "answer": "iMedicBot is designed to be a supplemental tool for managing your healthcare and should not replace the advice and care of healthcare professionals. It can help you track your health, provide preliminary assessments, and offer expert medical advice, but always consult with a doctor for personalized medical care."
+  },
+  {
+    "question": "Does iMedicBot support telemedicine?",
+    "answer": "Yes, iMedicBot integrates telemedicine features, allowing you to consult with healthcare professionals via secure video calls or messaging within the app."
+  },
+  {
+    "question": "How much does iMedicBot cost?",
+    "answer": "iMedicBot offers a free basic version with limited features. For additional features and functionality, we provide subscription plans at various price points. Please visit our pricing page for more information on available plans and pricing."
+  },
+  {
+    "question": "Can I use iMedicBot on multiple devices?",
+    "answer": "Yes, iMedicBot is available on multiple platforms, including iOS, Android, and web-based applications. You can access your account and synchronize your data across various devices."
+  },
+  {
+    "question": "How do I get started with iMedicBot?",
+    "answer": "To get started, simply sign up for an account on our website or download the iMedicBot app from the Apple App Store or Google Play Store. Once you've created your account, you can begin personalizing your profile and exploring the features."
+  },
+  {
+    "question": "Who can I contact for support or inquiries?",
+    "answer": "For support or inquiries, you can reach out to our team through the in-app chat or contact options provided on the landing page. We're always here to help!"
+  },
+  {
+    "question": "How can I provide feedback or suggestions for iMedicBot?",
+    "answer": "We value your feedback and suggestions! You can share your thoughts through the in-app feedback feature or by contacting our support team. We're always looking for ways to improve iMedicBot and your input is greatly appreciated."
+  }
+]

@@ -1,0 +1,425 @@
+.custom-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+
+.h1 {
+  color: #313d5b;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.h4 {
+  font-weight: 500;
+  font-size: 18px;
+  color: #313d5b;
+}
+
+.dark-h3 {
+  color: #313d5b;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.light-h3 {
+  color: var(--skyBlue);
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.fs-light {
+  color: #626f93;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.fs-dark {
+  color: #313d5b;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.hr {
+  width: 96%;
+  margin: 0 auto;
+  background: #e8edf4 !important;
+  border-top: 0 !important;
+  height: 2px;
+  max-width: 1500px;
+}
+
+.task-content .task-btn {
+  display: flex;
+  align-items: center;
+}
+
+.downloads-btn a {
+  background: #f8f9fb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+}
+
+.downloads-btn a:hover {
+  opacity: 0.4;
+}
+
+.downloads-btn a:active {
+  position: relative;
+  top: 1px;
+}
+
+.downloads-btn a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Features */
+
+.features-section {
+  padding: 60px 60px 100px;
+}
+
+.feature-card .feature-box {
+  width: 98px;
+  height: 98px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e7ecf3;
+  /* box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px; */
+}
+
+/* .feature-card .feature-box:hover {
+  border: 1px solid #e7ecf3;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+} */
+
+.how-work-section,
+.have-question-section {
+  padding: 60px 30px;
+  background: #f8f9fb;
+  border-radius: 40px;
+}
+
+.works-procedure {
+  display: flex;
+  justify-content: center;
+}
+
+.add-procedure::before {
+  content: "";
+  position: absolute;
+  background: url("../../../public/assets/images/Arrow-down.png");
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  top: 20%;
+  left: -50%;
+}
+
+.task-assigns::after {
+  content: "";
+  position: absolute;
+  background: url("../../../public/assets/images/Arrow-up.png");
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  top: 40%;
+  left: -50%;
+}
+
+.works-procedure h3,
+.works-procedure p {
+  text-align: center;
+}
+
+.web-version-section,
+.mobile-app-section {
+  padding: 90px 40px;
+}
+
+.tabs {
+  display: inline-flex;
+  align-items: center;
+  background: #f0f3f7;
+  border-radius: 15px;
+  padding: 3px;
+  list-style: none;
+}
+
+.tabs a {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  color: #626f93;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.tabs a:hover {
+  background: #f8fbfb;
+  border-radius: 15px;
+  box-shadow: 0px 2px 6px rgba(229, 235, 243, 0.5);
+}
+
+.tabs a:focus {
+  background: #e6ebff;
+  border-radius: 15px;
+  box-shadow: 0px 2px 6px rgba(229, 235, 243, 0.5);
+}
+
+.tabs .active {
+  background: #fff;
+  box-shadow: 0px 2px 6px rgba(229, 235, 243, 0.5);
+  border-radius: 15px;
+  color: var(--skyBlue);
+}
+
+.tabs-content li {
+  margin-top: 15px;
+}
+
+.download-badges button {
+  position: relative;
+  top: 1px;
+}
+
+/* pricing cards */
+
+.pricing-section {
+  padding: 70px 95px;
+  background: #f8f9fb;
+  border-radius: 40px;
+}
+
+.pricing-card {
+  padding: 40px 32px;
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(229, 235, 243, 0.5);
+  border-radius: 24px;
+}
+
+.pricing-card hr {
+  width: 100% !important;
+}
+
+.text-tilt {
+  color: var(--skyBlue);
+}
+
+.text-primary {
+  color: var(--skyBlue);
+}
+
+.pricing-card .price-btn {
+  height: 55px;
+  background: var(--skyBlue);
+  box-shadow: 0px 2px 6px rgb(229 235 243 / 50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  width: 130px;
+  cursor: pointer;
+}
+
+.pricing-card .price-btn:hover {
+  box-shadow: 0px 2px 6px rgba(229, 235, 243, 0.5);
+  background: #ffffff;
+  border: 1px solid var(--skyBlue);
+  color: var(--skyBlue) !important;
+}
+
+.pricing-card .price-btn:hover .pricing-btn {
+  color: var(--skyBlue);
+}
+
+.pricing-card .pricing-btn {
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+}
+
+.pricing-card .w-40 {
+  width: 131px;
+}
+
+.have-question-section input,
+.have-question-section textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e8edf4;
+  box-shadow: 0 2px 6px #e5ebf380;
+  border-radius: 12px;
+  outline: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #909ab5;
+}
+
+.about-img {
+  width: 100%;
+  height: 400px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-app-img {
+  width: 100%;
+  height: 400px;
+}
+
+.mobile-app-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* testimonial */
+
+.testimonialCard {
+  position: relative;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: transparent;
+  background-image: linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2%,
+      white 2%,
+      white 85%,
+      transparent,
+      85%,
+      transparent
+    ),
+    linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
+  background-position: top left, 0.2em 0.2em;
+  background-repeat: no-repeat;
+  filter: drop-shadow(3px 2px 6px #0005);
+}
+
+.testimonialCard::before,
+.testimonialCard::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  width: 3rem;
+  height: 4rem;
+  content: "";
+  z-index: 0;
+  font-size: 8rem;
+  font-family: Georgia, Times, Garamond, serif;
+}
+
+.testimonialCard::before {
+  top: -2rem;
+  left: 1rem;
+  content: open-quote;
+}
+
+.testimonialCard::after {
+  bottom: -1rem;
+  right: 1rem;
+  content: close-quote;
+}
+
+.testimonialCard::before,
+.testimonialCard::after {
+  text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
+}
+
+.testimonialCard p {
+  margin-top: 50px;
+}
+
+/* contact us */
+
+.social-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 26px;
+  color: #2ad;
+}
+
+@media (max-width: 992px) {
+  .mobile-app-img {
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-container {
+    padding: 30px 25px;
+  }
+
+  .h1 {
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    text-align: center;
+  }
+
+  .h4 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .add-procedure::before {
+    content: "";
+    position: absolute;
+    background: url("../../../public/assets/images/procedure-small.svg");
+    width: 15%;
+    height: 100%;
+    background-repeat: no-repeat;
+    top: -15%;
+    left: 0%;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .task-assigns::after {
+    content: "";
+    position: absolute;
+    background: url("../../../public/assets/images/procedure-small.svg");
+    width: 15%;
+    height: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    top: -22%;
+    left: 0;
+    right: 0;
+  }
+
+  .web-version-content {
+    padding: 0 20px;
+  }
+
+  .pricing-section {
+    border-radius: 0;
+    padding: 50px 14px;
+  }
+
+  .mobile-app-img img {
+    width: 100%;
+  }
+}
