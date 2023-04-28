@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   PORT : 3000,
-  MONGODB_URI : 'mongodb://localhost:27017/imedicbot',
+  MONGODB_URI : 'mongodb://127.0.0.1/imedicbot',
   secret : 'secret',
   host : '',
   backend : 'http://localhost:8000',

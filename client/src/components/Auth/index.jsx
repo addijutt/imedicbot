@@ -2,38 +2,61 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Styles from './auth.module.css';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { environment } from '../../constants';
-import http from '../../api';
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+// import { setAuth } from "../../store/user";
+import http from "../../api";
+import { environment } from "../../constants";
+import { validateEmail } from "../../core/helpers/validation";
 
 const Login = ({ loginShow, handleLoginClose, handleSignUpShow, handleForgotShow }) => {
-
-
-    const defaultBody = {
-        email: "",
-        password: "",
-    };
-
-    const defaultValidationErrors = {
-        email: [],
-        password: [],
-    };
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [validation, setValidation] = useState({ email: "", password: "" });
     const [isPasswordShow, setIsPasswordShow] = useState(false);
+    const [error, setError] = useState("");
 
-    const [body, setBody] = useState(defaultBody);
-    const [validationErrors, setValidationErrors] = useState(defaultValidationErrors);
-
-
-    const checkValidation = () => {
-        if (body.email.length <= 0 || body.password.length <= 0) return true;
-        return false;
+    const handleChange = (e) => {
+        if (e.target.name === "email") {
+            setEmail(e.target.value);
+        }
+        if (e.target.name === "password") {
+            setPassword(e.target.value);
+        }
     };
 
+    const handleValidation = (e) => {
+        let temp = { ...validation };
+        if (e.target.name === "email") {
+            if (email.length <= 0) {
+                temp = { ...temp, email: "email is required" };
+            } else if (!validateEmail(email)) {
+                temp = { ...temp, email: "email is not valid" };
+            } else {
+                temp = { ...temp, email: "" };
+            }
+        }
+        if (e.target.name === "password") {
+            if (password.length <= 0) temp = { ...temp, password: "password is required" };
+            else if (password.length < 4) temp = { ...temp, password: "This field must be at least 4 characters long" };
+            else temp = { ...temp, password: "" };
+        }
+        setValidation(temp);
+    };
+
+    const checkDisable = () => {
+        if (email.length <= 0 || password.length <= 0) {
+            return true;
+        }
+        if (validation.email.length > 0 || validation.password.length > 0) {
+            return true;
+        }
+        return false;
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,16 +64,18 @@ const Login = ({ loginShow, handleLoginClose, handleSignUpShow, handleForgotShow
             email: email,
             password: password,
         };
-
         http
             .post(environment.api_url + "/user/login", { user: body })
             .then((res) => {
-                console.log(res.data);
-                setBody(defaultBody);
-                handleLoginClose();
+                console.log(res)
+                setError("");
+                setEmail("");
+                setPassword("");
+                navigate("/");
             })
             .catch((err) => {
-                console.log(err)
+                // console.log(err?.response?.data?.message)
+                setError(err?.response?.data?.message);
             });
     };
 
@@ -60,37 +85,31 @@ const Login = ({ loginShow, handleLoginClose, handleSignUpShow, handleForgotShow
                 <Modal.Body className='p-0'>
                     <div className={Styles.Auth}>
                         <div className="fs-32 fw-600 text-900 mb-4">Sign in</div>
-                        <div className="mb-4">
+                        <div className={`position-relative mb-3 ${validation.email.length > 0 ? "error-message" : ""}`}>
                             <input type="email"
                                 name="email"
-                                value={body?.email}
-                                onInput={(e) => setBody({ ...body, email: e.target.value })}
-                                onBlur={(e) => {
-                                    setValidationErrors({
-                                        ...validationErrors,
-                                        email: checkValidation(e),
-                                    });
-                                }}
-                                className={Styles.input} placeholder='Login' />
+                                value={email}
+                                onBlur={(e) => handleValidation(e)}
+                                onChange={(e) => handleChange(e)}
+                                className={Styles.input} placeholder='Email' />
+                            {validation.email.length > 0 && <div className="error">{validation.email}</div>}
                         </div>
-                        <div className="position-relative">
+                        <div className={`position-relative mb-3 ${validation.password.length > 0 ? "error-message" : ""}`}>
                             <input type={isPasswordShow ? "text" : 'password'} className={Styles.input} placeholder='Password'
                                 name="password"
-                                value={body?.password}
-                                onInput={(e) => setBody({ ...body, password: e.target.value })}
-                                onBlur={(e) => {
-                                    setValidationErrors({
-                                        ...validationErrors,
-                                        password: checkValidation(e),
-                                    });
-                                }}
+                                value={password}
+                                onBlur={(e) => handleValidation(e)}
+                                onChange={(e) => handleChange(e)}
                             />
-                            <div className={Styles.icon} onClick={() => setIsPasswordShow(!isPasswordShow)}>
+                            {validation.password.length > 0 && <div className="error">{validation.password}</div>}
+
+                            {password.length > 0 && <div className={Styles.icon} onClick={() => setIsPasswordShow(!isPasswordShow)}>
                                 {isPasswordShow ? <FaEyeSlash /> : <FaEye />}
-                            </div>
+                            </div>}
                         </div>
                         <div className="mb-4 mt-5">
-                            <button type='button' className='btn btnPrimary btnLg w-100' disabled={checkValidation()} onClick={handleSubmit}>Login</button>
+                            <button type='button' className='btn btnPrimary btnLg w-100' disabled={checkDisable()}
+                                onClick={handleSubmit}>Login</button>
                         </div>
                         <div className="text-center"><a className="fs-14 fw-500 text-800" onClick={() => { handleLoginClose(); handleForgotShow(); }}> Forgot password? </a></div>
                     </div>

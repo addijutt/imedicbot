@@ -1,9 +1,10 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Prices = require('./models/Prices');
+const { MONGODB_URI } = require('./config/env/development');
 
 
-let con = mongoose.connect('mongodb://localhost:27017/ebank', {
+
+let con = mongoose.connect(`${MONGODB_URI}?retryWrites=false`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -18,8 +19,12 @@ let con = mongoose.connect('mongodb://localhost:27017/ebank', {
   });
 
   
+  const seedUsers  = require("../server/seeder/users");
 
 async function init() {
+
+  await seedUsers()
+
   exit();
 }
 function exit() {

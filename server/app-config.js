@@ -12,6 +12,7 @@ let http = require('http'),
   createLocaleMiddleware = require('express-locale'),
   compression = require('compression'),
   httpResponse = require('express-http-response');
+  const {MONGODB_URI}  = require("../server/config")
 let isProduction = process.env.NODE_ENV === 'production';
 module.exports = (app) => {
 
@@ -68,7 +69,7 @@ module.exports = (app) => {
     });
 
   } else {
-    mongoose.connect('mongodb://localhost/imedicbot?retryWrites=false', {
+    mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,

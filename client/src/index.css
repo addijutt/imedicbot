@@ -46,6 +46,7 @@ a:visited {
   color: #8494b5;
 }
 
+
 .fs-10 {
   font-size: 10px !important;
 }
@@ -402,3 +403,24 @@ button {
     font-size: 16px !important;
   }
 }
+
+div.error {
+	color: red;
+	font-size: 12px;
+	/* margin-top: 5px; */
+}
+.error-message input {
+	color: #e25252 !important;
+	border-color: #e25252 !important;
+	margin-bottom: 5px !important;
+}
+
+.error-message input::placeholder {
+	color: #e25252 !important;
+}
+
+.error-message .error {
+	color: #e25252 !important;
+	font-size: 12px !important;
+}
+
